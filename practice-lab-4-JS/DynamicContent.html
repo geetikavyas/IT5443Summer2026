@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Content</title>
+</head>
+<body>
+
+<script>
+    let userName = prompt("Enter your name:");
+    let heading = "h2";
+    let color = "blue";
+
+    document.write("<" + heading + " style='color:" + color + ";'>");
+    document.write("Welcome, " + userName);
+    document.write("</" + heading + ">");
+</script>
+<p>Programming Practice Note: Storing values in variables and using JavaScript to create HTML output is acceptable for basic dynamic content practice at the beginner level. However, this approach is still limited when the values are hardcoded because the user cannot change the content at run time unless the code asks for input, such as with prompt() or a form.</p>
+</body>
+</html>

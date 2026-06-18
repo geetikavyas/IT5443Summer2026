@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Loops</title>
+</head>
+<body>
+
+<script>
+    // Part A: For loop to display numbers in an HTML list
+    let number1 = prompt("Enter a positive number for the list:");
+    number1 = Number(number1);
+
+    document.write("<h2>Numbers From 1 to " + number1 + "</h2>");
+    document.write("<ul>");
+
+    for (let i = 1; i <= number1; i++) {
+        document.write("<li>" + i + "</li>");
+    }
+
+    document.write("</ul>");
+
+    // Part B: While loop to calculate sum
+    let number2 = prompt("Enter a positive number for the sum:");
+    number2 = Number(number2);
+
+    let count = 1;
+    let sum = 0;
+
+    while (count <= number2) {
+        sum = sum + count;
+        count++;
+    }
+
+    document.write("<h2>Sum From 1 to " + number2 + "</h2>");
+    document.write("<p>Sum: " + sum + "</p>");
+
+    // Part C: Nested loops to display an HTML table
+    let x = prompt("Enter the number of rows:");
+    let y = prompt("Enter the number of columns:");
+
+    x = Number(x);
+    y = Number(y);
+
+    document.write("<h2>Table With " + x + " Rows and " + y + " Columns</h2>");
+    document.write("<table border='1'>");
+
+    for (let row = 1; row <= x; row++) {
+        document.write("<tr>");
+
+        for (let col = 1; col <= y; col++) {
+            document.write("<td>Row " + row + ", Column " + col + "</td>");
+        }
+
+        document.write("</tr>");
+    }
+
+    document.write("</table>");
+</script>
+
+</body>
+</html>
