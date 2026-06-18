@@ -2,71 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Practice Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT 5443 - Web Technologies and Application Development</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        header {
+            background-color: #000000;
+            color: #ffcc00;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        nav {
+            background-color: #ffcc00;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #f8f8f8;
+            border: 2px solid #ffcc00;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .demo-link {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffcc00;
+            padding: 12px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #ffcc00;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .demo-link:hover {
+            background-color: #ffcc00;
+            color: #000000;
+            border: 2px solid #000000;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffcc00;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <h1>HTML Practice Demo</h1>
-        <p>This is the homepage for the HTML practice lab.</p>
+        <h1>IT 5443 - Web Technologies and Application Development</h1>
     </header>
 
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="resources.html">Resources</a>
+        <a href="index.html">Home</a>
+        <a href="/practice-lab-1-html/indexLab1.html">Practice Lab 1 HTML</a>
+        <a href="/practice-lab-4-javascript/indexLab4.html">Practice Lab 4 JavaScript</a>
     </nav>
 
     <main>
 
         <section>
-            <h2>About This Demo Website</h2>
+            <h2>Course Demo Links</h2>
 
             <p>
-                This website is created to practice basic HTML tags and webpage structure.
-                It introduces a simple demo topic and shows how HTML elements can be used together.
+                All course-related demos are provided in the links below. These pages are created to support student learning, classroom demonstrations, and hands-on practice with web technologies.
             </p>
 
-            <p>
-                The page includes headings, paragraphs, links, images, and semantic HTML tags.
-                <br>
-                Students can use this example to understand how a basic webpage is organized.
-            </p>
+            <a class="demo-link" href="/practice-lab-1-html/indexLab1.html">Practice Lab 1 HTML</a>
+
+            <a class="demo-link" href="/practice-lab-4-javascript/indexLab4.html">Practice Lab 4 JavaScript</a>
         </section>
 
         <section>
-            <h2>Image Example</h2>
-
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Laptop showing web development work">
+            <h2>Disclaimer</h2>
 
             <p>
-                To search for more HTML examples, visit
-                <a href="http://google.com" target="_blank">Google</a>.
+                This is a demo site created only for student learning purposes. It is not an official university website.
+            </p>
+
+            <p>
+                Official course information can be found here:
+                <a href="https://kennesaw.catalog.acalog.com/preview_course_nopop.php?catoid=83&coid=133130" target="_blank" rel="noopener noreferrer">
+                    IT 5443 Course Catalog Link
+                </a>
             </p>
         </section>
-
-        <article>
-            <h2>Why HTML Is Important</h2>
-
-            <p>
-                HTML is the foundation of webpages. It helps organize content so browsers can display text,
-                images, links, lists, and tables correctly.
-            </p>
-        </article>
-
-        <aside>
-            <h2>Quick Note</h2>
-
-            <p>
-                Semantic tags such as header, nav, main, section, article, aside, and footer help describe
-                the purpose of different parts of a webpage.
-            </p>
-        </aside>
 
     </main>
 
     <footer>
-        <p>HTML Practice Demo | For Student Learning Purposes Only</p>
+        <p>Demo Site | For Student Learning Purposes Only</p>
     </footer>
 
 </body>
