@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 2 Counter</title>
+</head>
+<body>
+
+    <h1>Counter Demo</h1>
+
+    <p>Counter value: <span id="counter">0</span></p>
+
+    <button id="countButton">Increase Counter</button>
+
+    <script>
+        // Get the button from the webpage
+        let button = document.getElementById("countButton");
+
+        // Add click event to the button
+        button.onclick = function() {
+            // Read the current value inside the span
+            let currentValue = document.getElementById("counter").innerHTML;
+
+            // Convert the value from text to number
+            let numberValue = Number(currentValue);
+
+            // Increase the number by 1
+            numberValue = numberValue + 1;
+
+            // Display the new number back inside the span
+            document.getElementById("counter").innerHTML = numberValue;
+        };
+    </script>
+
+</body>
+</html>

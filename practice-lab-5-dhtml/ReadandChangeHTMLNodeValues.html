@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 1 Demo</title>
+</head>
+<body>
+
+    <h1 id="pageTitle">Welcome to My Demo Page</h1>
+
+    <p>
+        Visit this website:
+        <a id="myLink" href="https://www.google.com">Google</a>
+    </p>
+
+    <img 
+        id="myImage" 
+        src="https://www.w3schools.com/html/pic_trulli.jpg" 
+        alt="Placeholder image">
+
+    <br><br>
+
+    <button id="myButton">Change Page Values</button>
+
+    <hr>
+
+    <h2>Original HTML Values</h2>
+
+    <p id="titleText"></p> <!-- This is a node -->
+    <p id="linkURL"></p><!-- This is a node -->
+    <p id="linkText"></p><!-- This is a node -->
+    <p id="imageSource"></p><!-- This is a node -->
+    <p id="imageAlt"></p><!-- This is a node -->
+    <p id="buttonText"></p><!-- This is a node -->
+
+    <script>
+        // Get the HTML elements
+        let title = document.getElementById("pageTitle"); //This part gets the HTML nodes 
+        let link = document.getElementById("myLink");
+        let image = document.getElementById("myImage");
+        let button = document.getElementById("myButton");
+
+        // Display the original values on the webpage
+        document.getElementById("titleText").innerHTML = "H1 text: " + title.innerHTML; //title.innerHTML reads the current values 
+        document.getElementById("linkURL").innerHTML = "Link URL: " + link.href; //link.href reads the current values
+        document.getElementById("linkText").innerHTML = "Link text: " + link.innerHTML; //link.innerHTML reads the current values 
+        document.getElementById("imageSource").innerHTML = "Image source: " + image.src; //image.src reads the current values
+        document.getElementById("imageAlt").innerHTML = "Image alt text: " + image.alt; //image.alt reads the current values
+        document.getElementById("buttonText").innerHTML = "Button text: " + button.innerHTML; //button.innerHTML reads the current values
+
+        // Add click event to the button so the values change only after the button is clicked.
+        button.onclick = function() {
+            // Change all six values only after the button is clicked
+            title.innerHTML = "The Page Has Been Updated";
+
+            link.href = "https://www.kennesaw.edu";
+            link.innerHTML = "Kennesaw State University";
+
+            image.src = "https://www.w3schools.com/html/img_girl.jpg";
+            image.alt = "Updated placeholder image";
+
+            button.innerHTML = "Values Changed";
+
+            // Display the new values on the webpage
+            document.getElementById("titleText").innerHTML = "New H1 text: " + title.innerHTML;
+            document.getElementById("linkURL").innerHTML = "New link URL: " + link.href;
+            document.getElementById("linkText").innerHTML = "New link text: " + link.innerHTML;
+            document.getElementById("imageSource").innerHTML = "New image source: " + image.src;
+            document.getElementById("imageAlt").innerHTML = "New image alt text: " + image.alt;
+            document.getElementById("buttonText").innerHTML = "New button text: " + button.innerHTML;
+        };
+    </script>
+
+</body>
+</html>

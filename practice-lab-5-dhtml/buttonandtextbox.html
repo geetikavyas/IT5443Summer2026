@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 3 Button and Textbox</title>
+</head>
+<body>
+
+    <h1>Button and Textbox Demo</h1>
+
+    <p>Enter your text:</p>
+
+    <input type="text" id="userText">
+
+    <button id="showButton">Show Text</button>
+
+    <p id="displayArea"></p>
+
+    <script>
+        // Get the button
+        let button = document.getElementById("showButton");
+
+        // Add click event to the button
+        button.onclick = function() {
+            // Read the value entered in the textbox
+            let text = document.getElementById("userText").value;
+
+            // Display the text on the webpage
+            document.getElementById("displayArea").innerHTML = text;
+
+            // Change the displayed text color to red
+            document.getElementById("displayArea").style.color = "red";
+        };
+    </script>
+
+</body>
+</html>
