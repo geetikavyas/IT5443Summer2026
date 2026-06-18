@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+header, footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+
+#goalMessage {
+    background-color: #e8f5e9;
+    padding: 10px;
+}
+
+#resultArea {
+    margin-top: 20px;
+    padding: 15px;
+    display: none;
+}
+
+.success {
+    background-color: #e8f5e9;
+    border-left: 5px solid #2e7d32;
+}
+
+.warning {
+    background-color: #fff8e1;
+    border-left: 5px solid #f9a825;
+}
+
+.error {
+    background-color: #ffebee;
+    border-left: 5px solid #c62828;
+}

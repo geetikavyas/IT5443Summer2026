@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Goal Calculator</title>
+    <link rel="stylesheet" href="fitness.css">
+</head>
+<body>
+
+    <header>
+        <h1>Fitness Goal Calculator</h1>
+        <p>Check your weekly exercise progress.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enter Your Information</h2>
+
+            <label for="userName">Name</label>
+            <input type="text" id="userName">
+
+            <label for="fitnessGoal">Fitness Goal</label>
+            <select id="fitnessGoal">
+                <option value="">-- Select Goal --</option>
+                <option value="general">General Health</option>
+                <option value="weightloss">Weight Loss</option>
+                <option value="strength">Strength Building</option>
+            </select>
+
+            <p id="goalMessage">Select a goal to see your weekly target.</p>
+
+            <label for="workoutDays">Workout Days Per Week</label>
+            <input type="number" id="workoutDays">
+
+            <label for="minutesPerWorkout">Minutes Per Workout</label>
+            <input type="number" id="minutesPerWorkout">
+
+            <button type="button" id="calculateButton">Calculate</button>
+
+            <div id="resultArea"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is a class demo project for practicing HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="fitness.js"></script>
+</body>
+</html>
