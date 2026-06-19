@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us Form</title>
+
+    <style>
+        /* This CSS styles the whole page. */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#f4f4f4;
+            font-size: 16px;
+            color: #222;
+        }
+
+        /*The container keeps the form centered on the page. It also gives the form a white background and some spacing. */
+        .container {
+            width: 500px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Each label appears on its own line. The bold text helps users clearly see what each field is asking for. */
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        /* These form fields take the full width of the form container. This makes the form easier to read and complete. */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* This gives the comments box more height because users may type a longer message there. */
+        textarea {
+            height: 90px;
+        }
+
+        /* Checkbox and radio button labels should not look as bold as the main field labels. */
+        .option-group label {
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        /*This styles the button so it is easy to see and click. */
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #005a9c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /*This changes the button color when the mouse moves over it.This gives the user visual feedback.*/
+        button:hover {
+            background-color: #003f70;
+        }
+
+        /*This section is where JavaScript will display the user's answers. It starts empty and gets filled after the button is clicked. */
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eef6ff;
+            border: 1px solid #99c2e6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <!--This is the main form. In this lab, the form is not sent to a server. JavaScript will display the user's answers on the same page -->
+        <form id="contactForm">
+
+            <!-- The label is connected to the input using for="name". The input has id="name". The for value and id value should match for accessibility-->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <!--type="email" tells the browser this field expects an email address-->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email">
+
+            <!-- Checkboxes allow users to select more than one option -->
+            <label>Technology Interests:</label>
+            <div class="option-group">
+
+                <!-- All checkboxes use name="interest". This makes it easier for JavaScript to find them as one group -->
+                <label>
+                    <input type="checkbox" name="interest" value="Web Design">
+                    Web Design
+                </label>
+
+                <label>
+                    <input type="checkbox" name="interest" value="Programming">
+                    Programming
+                </label>
+
+                <label>
+                    <input type="checkbox" name="interest" value="Cybersecurity">
+                    Cybersecurity
+                </label>
+
+                <label>
+                    <input type="checkbox" name="interest" value="Cloud Computing">
+                    Cloud Computing
+                </label>
+            </div>
+
+            <!-- A textarea is used for longer comments -->
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <!-- Radio buttons allow users to select only one option when all radio buttons have the same name -->
+            <label>Contact Preference:</label>
+            <div class="option-group">
+
+                <label>
+                    <input type="radio" name="contactPreference" value="Email">
+                    Email
+                </label>
+
+                <label>
+                    <input type="radio" name="contactPreference" value="Phone">
+                    Phone
+                </label>
+
+                <label>
+                    <input type="radio" name="contactPreference" value="Text Message">
+                    Text Message
+                </label>
+            </div>
+
+            <!-- The dropdown allows the user to select one state -->
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="">Select a state</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Florida">Florida</option>
+                <option value="Alabama">Alabama</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="Tennessee">Tennessee</option>
+            </select>
+
+            <!-- This is an additional form element -->
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone">
+
+            <!-- type="button" prevents the form from refreshing the page. onclick runs the JavaScript function when the button is clicked -->
+            <button type="button" onclick="displayFormData()">Submit Contact Form</button>
+        </form>
+
+        <!-- JavaScript will display the form results inside this div-->
+        <div id="output"></div>
+    </div>
+
+    <script>
+        /* This function runs when the user clicks the Submit Contact Form button. The function will: Get the values entered by the user, Check which checkboxes and radio buttons were selected, Display everything under the form */
+        function displayFormData() {
+
+            /* For textboxes, textarea, and dropdowns, we can use .value and document.getElementById() finds the element by its id and .value gets what the user typed or selected. */
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let comments = document.getElementById("comments").value;
+            let state = document.getElementById("state").value;
+            let phone = document.getElementById("phone").value;
+
+            /* We use an array because checkboxes can have multiple selected values. For example, the user may select: Web Design Programming Cybersecurity That means we need a way to store more than one answer. A normal variable is better for one value.  An array is better for a list of values. */
+            /*This finds all checkboxes with name="interest".There are multiple checkboxes with this same name. */
+            let interestBoxes = document.getElementsByName("interest");
+
+            /*This creates an empty array. At first, the array has nothing inside it. As we find selected checkboxes, we will add those values into this array. */
+            let selectedInterests = [];
+
+            /* This loop checks each checkbox one at a time. interestBoxes.length tells us how many interest checkboxes exist. The loop starts at 0 because JavaScript counting starts at 0. */
+            for (let i = 0; i < interestBoxes.length; i++) {
+
+                /* .checked checks whether the checkbox is selected. If the checkbox is selected, .checked is true. If the checkbox is not selected, .checked is false. */
+                if (interestBoxes[i].checked) {
+                /* .push() adds a new item to the array. Example: If the user selected Web Design and Programming,the array would become:["Web Design", "Programming"] */
+                    selectedInterests.push(interestBoxes[i].value);
+                }
+            }
+
+            /* Now we handle the radio button section. Radio buttons are different from checkboxes. The user can select only one contact preference. However, we still need to check each radio button to find out which one was selected. */
+            let contactOptions = document.getElementsByName("contactPreference");
+
+            /* This variable will store the selected radio button value. It starts empty in case the user does not select anything. */
+            let selectedContactPreference = "";
+
+            /* This loop checks each radio button one at a time. When it finds the selected radio button, it stores that value in selectedContactPreference. */
+            for (let i = 0; i < contactOptions.length; i++) {
+                if (contactOptions[i].checked) {
+                    selectedContactPreference = contactOptions[i].value;
+                }
+            }
+
+            /* Now we display all user input under the form. innerHTML allows us to place HTML content inside an element. Here, we are putting headings and paragraphs inside the output div. selectedInterests is an array and .join(", ") changes the array into a readable text list. Example:["Web Design", "Programming"]becomes: Web Design, Programming */
+            document.getElementById("output").innerHTML =
+                "<h2>Your Contact Information</h2>" +
+                "<p><strong>Name:</strong> " + name + "</p>" +
+                "<p><strong>Email:</strong> " + email + "</p>" +
+                "<p><strong>Phone:</strong> " + phone + "</p>" +
+                "<p><strong>Technology Interests:</strong> " + selectedInterests.join(", ") + "</p>" +
+                "<p><strong>Comments:</strong> " + comments + "</p>" +
+                "<p><strong>Contact Preference:</strong> " + selectedContactPreference + "</p>" +
+                "<p><strong>State:</strong> " + state + "</p>";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 30px;
+            color: #222;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            margin-top: 5px;
+            padding: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 12px;
+            font-size: 16px;
+        }
+
+        .error {
+            color: #b00020;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .success {
+            color: #006400;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <form id="validationForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <div id="passwordError" class="error"></div>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <div id="confirmPasswordError" class="error"></div>
+
+        <label>
+            <input type="checkbox" id="agree">
+            I agree to the terms
+        </label>
+        <div id="agreeError" class="error"></div>
+
+        <button type="button" onclick="validateForm()">Check Form</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function validateForm() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let agree = document.getElementById("agree").checked;
+
+            // Clear old messages before checking again
+            document.getElementById("passwordError").innerHTML = "";
+            document.getElementById("confirmPasswordError").innerHTML = "";
+            document.getElementById("agreeError").innerHTML = "";
+            document.getElementById("result").innerHTML = "";
+
+            let isValid = true;
+
+            // Check if password is empty
+            if (password === "") {
+                document.getElementById("passwordError").innerHTML = "Password is required.";
+                isValid = false;
+            }
+
+            // Check if confirm password is empty
+            if (confirmPassword === "") {
+                document.getElementById("confirmPasswordError").innerHTML = "Confirm password is required.";
+                isValid = false;
+            }
+
+            // Check if both passwords match
+            if (password !== "" && confirmPassword !== "" && password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords must match.";
+                isValid = false;
+            }
+
+            // Check if checkbox is selected
+            if (agree === false) {
+                document.getElementById("agreeError").innerHTML = "You must check this box.";
+                isValid = false;
+            }
+
+            if (isValid === true) {
+                document.getElementById("result").innerHTML =
+                    "<p class='success'>Form is valid.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
