@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submitted Student Information</title>
+</head>
+<body>
+
+    <h1>Submitted Student Information</h1>
+
+    <?php
+    // Read submitted form values
+    $studentName = trim($_POST["studentName"] ?? "");
+    $studentEmail = trim($_POST["studentEmail"] ?? "");
+    $studentStatus = $_POST["studentStatus"] ?? "";
+    $comment = trim($_POST["comment"] ?? "");
+
+    // Store validation messages
+    $errors = [];
+
+    // Check required information
+    if ($studentName == "") {
+        $errors[] = "Student name is required.";
+    }
+
+    if ($studentEmail == "") {
+        $errors[] = "Student email is required.";
+    }
+
+    if ($studentStatus == "") {
+        $errors[] = "Please select a student status.";
+    }
+
+    if ($comment == "") {
+        $errors[] = "Please enter a comment about why you are interested in the Shore Innovation Center.";
+    }
+
+    // Display errors or submitted information
+    if (!empty($errors)) {
+        echo "<h2>Please Fix the Following:</h2>";
+        echo "<ul>";
+
+        foreach ($errors as $error) {
+            echo "<li>$error</li>";
+        }
+
+        echo "</ul>";
+        echo '<p><a href="student-info.html">Return to the form</a></p>';
+
+    } else {
+        echo "<p><strong>Student Name:</strong> " . htmlspecialchars($studentName) . "</p>";
+        echo "<p><strong>Student Email:</strong> " . htmlspecialchars($studentEmail) . "</p>";
+        echo "<p><strong>Student Status:</strong> " . htmlspecialchars($studentStatus) . "</p>";
+        echo "<p><strong>Interest in the Shore Innovation Center:</strong> " . htmlspecialchars($comment) . "</p>";
+
+        echo "<p>Your information was submitted successfully.</p>";
+    }
+    ?>
+
+</body>
+</html>
