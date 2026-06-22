@@ -13,7 +13,7 @@
         $studentEmail = $_GET["studentEmail"] ?? "";
         $program = $_GET["program"] ?? "";
 
-        echo "<p><strong>Student Name:</strong> " . $studentName. "</p>";
+        echo "<p><strong>Student Name:</strong> " . $studentName. "</p>"; //the concatenation operator (.) joins pieces of text together.
         echo "<p><strong>Student Email:</strong> " . $studentEmail. "</p>";
         echo "<p><strong>Program:</strong> " . $program . "</p>";
     ?>
