@@ -9,14 +9,14 @@
     <h1>Submitted Student Information</h1>
 
     <?php
-    // Read submitted form values
-    $studentName = trim($_POST["studentName"] ?? ""); //?? is called the null coalescing operator in PHP.it means: Use $_POST["studentName"] if it exists; otherwise, use an empty string "". So PHP will not show an error if the form has not been submitted yet or if studentName is missing.
-    $studentEmail = trim($_POST["studentEmail"] ?? "");
+    // Read submitted form values, method in HTML is POST therefore $_POST is used. PHP creates one $_POST array for the whole form submission. Each line is one key-value pair, commas separate those pairs inside the array.
+    $studentName = trim($_POST["studentName"] ?? ""); // ?? is called the null coalescing operator in PHP.it means: Use $_POST["studentName"] if it exists; otherwise, use an empty string "". So PHP will not show an error if the form has not been submitted yet or if studentName is missing.
+    $studentEmail = trim($_POST["studentEmail"] ?? ""); // PHP is only checking whether the email field is empty, the part that checks whether the email has an @ symbol and the remaining part is in the HTML form.
     $studentStatus = $_POST["studentStatus"] ?? "";
     $comment = trim($_POST["comment"] ?? "");
 
     // Store validation messages
-    $errors = [];
+    $errors = []; //$errors is an array[] because there can be more than one error at the same time.
 
     // Check required information
     if ($studentName == "") {
