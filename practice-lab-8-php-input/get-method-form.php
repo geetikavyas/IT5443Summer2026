@@ -13,9 +13,9 @@
         $studentEmail = $_GET["studentEmail"] ?? "";
         $program = $_GET["program"] ?? "";
 
-        echo "<p><strong>Student Name:</strong> " . htmlspecialchars($studentName) . "</p>";
-        echo "<p><strong>Student Email:</strong> " . htmlspecialchars($studentEmail) . "</p>";
-        echo "<p><strong>Program:</strong> " . htmlspecialchars($program) . "</p>";
+        echo "<p><strong>Student Name:</strong> " . $studentName. "</p>";
+        echo "<p><strong>Student Email:</strong> " . $studentEmail. "</p>";
+        echo "<p><strong>Program:</strong> " . $program . "</p>";
     ?>
 
 </body>
