@@ -48,11 +48,10 @@
         echo '<p><a href="student-info.html">Return to the form</a></p>';
 
     } else {
-        echo "<p><strong>Student Name:</strong> " . htmlspecialchars($studentName) . "</p>";
-        echo "<p><strong>Student Email:</strong> " . htmlspecialchars($studentEmail) . "</p>";
-        echo "<p><strong>Student Status:</strong> " . htmlspecialchars($studentStatus) . "</p>";
-        echo "<p><strong>Interest in the Shore Innovation Center:</strong> " . htmlspecialchars($comment) . "</p>";
-
+        echo "<p><strong>Student Name:</strong> " . $studentName . "</p>";
+        echo "<p><strong>Student Email:</strong> " . $studentEmail . "</p>";
+        echo "<p><strong>Student Status:</strong> " . $studentStatus . "</p>";
+        echo "<p><strong>Interest in the Shore Innovation Center:</strong> " . $comment . "</p>";
         echo "<p>Your information was submitted successfully.</p>";
     }
     ?>
