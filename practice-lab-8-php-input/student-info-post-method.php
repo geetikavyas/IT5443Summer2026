@@ -48,7 +48,7 @@
         echo '<p><a href="student-info.html">Return to the form</a></p>';
 
     } else {
-        echo "<p><strong>Student Name:</strong> " . $studentName . "</p>";
+        echo "<p><strong>Student Name:</strong> " . $studentName . "</p>"; //the concatenation operator (.) joins pieces of text together.
         echo "<p><strong>Student Email:</strong> " . $studentEmail . "</p>";
         echo "<p><strong>Student Status:</strong> " . $studentStatus . "</p>";
         echo "<p><strong>Interest in the Shore Innovation Center:</strong> " . $comment . "</p>";
