@@ -10,7 +10,7 @@
 
     <?php
     // Read submitted form values
-    $studentName = trim($_POST["studentName"] ?? "");
+    $studentName = trim($_POST["studentName"] ?? ""); //?? is called the null coalescing operator in PHP.it means: Use $_POST["studentName"] if it exists; otherwise, use an empty string "". So PHP will not show an error if the form has not been submitted yet or if studentName is missing.
     $studentEmail = trim($_POST["studentEmail"] ?? "");
     $studentStatus = $_POST["studentStatus"] ?? "";
     $comment = trim($_POST["comment"] ?? "");
