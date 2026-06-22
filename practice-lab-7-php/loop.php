@@ -41,7 +41,7 @@
 
         <input type="submit" value="Show Results">
     </form>
-
+    <p>When the user clicks the loop.php link, the browser sends a request to the server for that file. The server finds loop.php, runs the PHP code inside it, and sends the resulting HTML page back to the browser, which then displays the form. At this first stage, PHP runs but there may not be any form values yet. After the user fills out the form and clicks Submit, the browser sends another request to the server. PHP runs again using the submitted values and creates the output that appears on the page.</p>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
