@@ -56,8 +56,10 @@
 </head>
 
 <body>
-
+    <?php include "header.php"; ?>
     <h1>FitLife Gym Membership Application</h1>
+    <?php include "footer.php"; ?>
+    
 
     <p>
         Complete this form to apply for a gym membership.
